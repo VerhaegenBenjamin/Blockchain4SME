@@ -1,0 +1,6 @@
+query selectUsedVehicles {
+  description: "Select used vehicles"
+  statement:
+      SELECT org.example.workshop.Vehicle
+          WHERE (vehicleStatus == 'USED')
+}
