@@ -1,4 +1,1 @@
-"# workshopComposer"
-"Solutions & Powerpoints workshop Composer" 
-"# workshopComposer" 
-"# Blockchain4SME" 
+Solutions & Powerpoints workshop Composer
