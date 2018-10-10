@@ -1,0 +1,99 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+rule NetworkAdminUser {
+    description: "Grant business network administrators full access to user resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "**"
+    action: ALLOW
+}
+
+rule NetworkAdminSystem {
+    description: "Grant business network administrators full access to system resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "org.hyperledger.composer.system.**"
+    action: ALLOW
+}
+
+
+rule ParticipantAccess {
+    description: "Grant business network administrators full access to system resources"
+    participant: "org.workshop.escrow.User"
+    operation: ALL
+    resource: "org.hyperledger.composer.system.**"
+    action: ALLOW
+}
+
+/*rule CompleteOrder {
+	description: "Only buyers can complete order"
+    participant(p): "org.workshop.escrow.User"
+  	operation: CREATE
+    resource(r): "org.workshop.escrow.CompleteOrder"
+    condition:  (r.order.buyer.getIdentifier() == p.getIdentifier())
+  	action: ALLOW
+}
+
+rule OrderControl {
+	description: "Order item"
+    participant: "org.workshop.escrow.User"
+  	operation: READ, CREATE, UPDATE
+    resource: "org.workshop.escrow.Order"
+  	action: ALLOW
+}
+
+rule OrderItem {
+	description: "Order item"
+    participant: "org.workshop.escrow.User"
+  	operation: CREATE, UPDATE
+    resource: "org.workshop.escrow.OrderItem"
+  	action: ALLOW
+}
+
+rule ItemControl {
+	description: "Order item"
+    participant: "org.workshop.escrow.User"
+  	operation: READ,CREATE, UPDATE
+    resource: "org.workshop.escrow.Item"
+  	action: ALLOW
+}
+
+rule EscrowControl {
+	description: "Order item"
+    participant: "org.workshop.escrow.User"
+  	operation: ALL
+    resource: "org.workshop.escrow.EscrowAccount"
+  	action: ALLOW
+}
+
+rule ParticipantControl {
+	description: "Update participant"
+    participant: "org.workshop.escrow.User"
+  	operation: UPDATE
+    resource: "org.workshop.escrow.User"
+  	action: ALLOW
+}*/
+
+rule AllTransactions {
+	description: "All participants of type User can do all transactions"
+    participant: "org.workshop.escrow.User"
+  	operation: ALL
+    resource: "org.workshop.escrow.*"
+    action: ALLOW
+}
+
+
+
+
