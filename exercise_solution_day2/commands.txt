@@ -2,8 +2,7 @@ COMMANDO'S COMPOSER-REST-SERVER
 
 composer network install --card PeerAdmin@hlfv1 --archiveFile exercise1-workshop1.bna 
 
-composer network start --networkName exercise1-workshop1 --networkVersion 0.0.2-deploy.77 --networkAdmin admin 
---networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card
+composer network start --networkName exercise1-workshop1 --networkVersion 0.0.2-deploy.77 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card
 
 composer card import --file networkadmin.card
 
